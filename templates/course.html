@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ course.title }}</h2>
+<p>{{ course.description }}</p>
+<p>Progress: {{ progress.completed_lessons }} / {{ progress.total_lessons }}</p>
+<a href="{{ url_for('quiz', course_id=course.id) }}">Take Quiz</a>
+{% endblock %}

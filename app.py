@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Sample data
 courses = [
@@ -31,5 +31,5 @@ def quiz(course_id):
     quiz = next((quiz for quiz in quizzes if quiz["course_id"] == course_id), None)
     return render_template('quiz.html', quiz=quiz)
 
-if _name_ == '_main_':
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, ssl_context=('cert.pem', 'key.pem'))
